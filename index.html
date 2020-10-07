@@ -1,43 +1,13 @@
 <html>
     <head>
-        <title>Integration Test</title>
-        <link rel="stylesheet" href="style.css" type="text/css" />
+        <title>SmartWall Android Test</title>
         <script src="https://sdk.staging.smartwall.ai/?v=2"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body>
-        <div class="headerContainer">
-            An Integration Thingy
-        </div>
-        <div class="mainContainer">
-            <span class="titleFont">Read the latest things:</span>
-
-            <div class="article-content-text" id="article1">
-                <div class="articleHeader titleFont">Once Upon A Time</div>
-                <br/><br/>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus elit id eros dapibus euismod. Maecenas commodo, velit in venenatis dapibus, elit lacus sodales lorem, consectetur semper libero tellus eget nunc. Fusce enim odio, placerat id nulla et, posuere lacinia est. Ut laoreet gravida turpis sed gravida. Pellentesque id odio consequat, sodales dui vitae, vulputate risus. Quisque ullamcorper, sapien ut tristique venenatis, dui ex iaculis dolor, vitae rhoncus dui magna vel nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque eget vulputate ante.
-                <br/><br/>
-                Integer scelerisque varius aliquam. Morbi ultrices urna eu convallis hendrerit. Donec vestibulum neque tristique ante placerat, ut finibus nisi imperdiet. In eget vehicula magna, vel malesuada libero. Duis sed tempor felis. Quisque sollicitudin ante odio, sed tincidunt odio placerat sed. Sed dictum nisi ut dui auctor finibus. Aliquam convallis ipsum ac ex vulputate fermentum. Morbi semper dolor vitae lacus porta, ac eleifend nunc semper. Donec sed ante elit.
-                <br/><br/>
-                Nunc congue nec urna et luctus. Aenean tincidunt, massa in sollicitudin pulvinar, erat sapien laoreet dui, eu vehicula ex quam at justo. In hac habitasse platea dictumst. Duis placerat nisi id orci tempor, vulputate rutrum velit convallis. Donec tempus tortor vel turpis sodales fringilla non nec mi. Quisque vestibulum bibendum ullamcorper. Curabitur vitae enim augue. Etiam sagittis, orci pellentesque feugiat interdum, orci mi interdum libero, id finibus erat felis et massa. Sed nec erat sed elit finibus tempus. Nunc dolor dui, cursus non pretium eu, porta cursus velit. Donec vitae cursus ligula. Pellentesque accumsan ornare suscipit.
-                <br/><br/>
-            </div>
-
-            <div class="article-content-text" id="article2">
-                <div class="articleHeader titleFont">Back in The Day</div>
-                <br/><br/>
-                Fusce maximus elit id eros dapibus euismod. Maecenas commodo, velit in venenatis dapibus, elit lacus sodales lorem, consectetur semper libero tellus eget nunc. Fusce enim odio, placerat id nulla et, posuere lacinia est. Ut laoreet gravida turpis sed gravida. Pellentesque id odio consequat, sodales dui vitae, vulputate risus. Quisque ullamcorper, sapien ut tristique venenatis, dui ex iaculis dolor, vitae rhoncus dui magna vel nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque eget vulputate ante.
-                <br/><br/>
-                Integer scelerisque varius aliquam. Morbi ultrices urna eu convallis hendrerit. Donec vestibulum neque tristique ante placerat, ut finibus nisi imperdiet. In eget vehicula magna, vel malesuada libero. Duis sed tempor felis. Quisque sollicitudin ante odio, sed tincidunt odio placerat sed. Sed dictum nisi ut dui auctor finibus. Ali  quam convallis ipsum ac ex vulputate fermentum. Morbi semper dolor vitae lacus porta, ac eleifend nunc semper. Donec sed ante elit.
-                <br/><br/>
-                In hac habitasse platea dictumst. Duis placerat nisi id orci tempor, vulputate rutrum velit convallis. Donec tempus tortor vel turpis sodales fringilla non nec mi. Quisque vestibulum bibendum ullamcorper. Curabitur vitae enim augue. Etiam sagittis, orci pellentesque feugiat interdum, orci mi interdum libero, id finibus erat felis et massa. Sed nec erat sed elit finibus tempus.
-                <br/><br/>
-            </div>
-        </div>
-
+    <body class="mainContainer">
 
 <script>
- (function() { console.info('Init JS SDK'); var sw = new SmartWallSDK({ article_uid: "sw-demo-culture", smartwall_uid: "sw-demo-micropayment-wall", api_key: "142e62cabccd4dc57ab61f3ca3844bacf7beed5d1da2564b7dc0903f51cd91e8", selector: ".article-content-text", environment: "staging", mode: 'frontend' }); window.smartWallSdk = sw; })();
+ (function() { console.info('Init JS SDK'); var sw = new SmartWallSDK({ article_uid: "foo-sw-demo-culture", smartwall_uid: "alexii_wall", api_key: "142e62cabccd4dc57ab61f3ca3844bacf7beed5d1da2564b7dc0903f51cd91e8", selector: ".mainContainer", environment: "staging", mode: 'frontend' }); window.smartWallSdk = sw; })(); 
 </script>
 
     </body>
