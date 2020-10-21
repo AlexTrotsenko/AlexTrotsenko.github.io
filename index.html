@@ -1,16 +1,44 @@
 <html>
     <head>
         <title>SmartWall Android Test</title>
-        <script src="https://sdk.staging.smartwall.ai/?v=2"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://sdk.staging.smartwall.ai/?v=2"></script>
+<!--        <script src="file:///android_asset/androidSdkIntegration.js" type="text/javascript"></script>-->
     </head>
     <body>
         <div class="mainContainer"/>
 
 
         <script>
-         (function() { console.info('Init JS SDK'); var sw = new SmartWallSDK({ articleUid:
-         "foo-sw-demo-culture", smartwallUid: "alexii_wall", apiKey: "142e62cabccd4dc57ab61f3ca3844bacf7beed5d1da2564b7dc0903f51cd91e8", selector: ".mainContainer", environment: "staging", mode: 'frontend' }); window.smartWallSdk = sw; })();
+         //Allows NativeApp accept normal JS objects in the client code and hides Json-parsing complexity
+            NativeApp.reportUnlockResult = function(unlockResult) {
+                const unlockResultJson = JSON.stringify(unlockResult)
+                NativeApp.reportUnlockResultJson(unlockResultJson)
+            };
+
+         function onSmartWallSDKRequestedFromNative(params) {
+            console.log("Called with value: " + params.apiKey);
+
+            console.info('Init JS SDK');
+            var sw = new SmartWallSDK({
+                articleUid: params.articleUid,
+                smartwallUid: params.smartWallUid,
+                apiKey: params.apiKey,
+                selector: ".mainContainer",
+                environment: "staging",
+                mode: 'frontend',
+                onReady: function() {
+                    console.info('onReady hook run');
+                },
+                onUnlock: function() {
+                    console.info('onUnlock hook run');
+                },
+                onPaymentStart: function() {
+                    console.info('onPaymentStart hook run');
+                }
+            });
+            window.smartWallSdk = sw;
+        }
         </script>
 
     </body>
