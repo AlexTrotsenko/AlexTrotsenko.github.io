@@ -32,6 +32,9 @@
                 },
                 onUnlock: function() {
                     console.info('onUnlock hook run');
+
+                    const objResult = {unlockSuccessful: true};
+                    NativeApp.reportUnlockResult(objResult)
                 },
                 onPaymentStart: function() {
                     console.info('onPaymentStart hook run');
