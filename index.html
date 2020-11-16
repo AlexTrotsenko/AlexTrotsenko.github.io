@@ -5,9 +5,32 @@
         <script src="https://sdk.staging.smartwall.ai/?v=2"></script>
 <!--NOTE:   Currently this HTML is deployed to the web and is not loaded from the assets (and JS is loaded by the app in runtime).-->
 <!--        <script src="file:///android_asset/androidSdkIntegration.js" type="text/javascript"></script>-->
+        <style>
+            .outer {
+              display: table;
+              width: 100%;
+              height: 100%;
+            }
+            .inner {
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+            }
+            .mainContainer {
+              position: relative;
+              display: inline-block;
+            }
+        </style>
     </head>
     <body>
-        <div class="mainContainer"/>
+    <div class="container">
+        <div class="outer">
+            <div class="inner">
+                <!--Center SmartWall: https://stackoverflow.com/a/26282630/3134602-->
+                <div class="mainContainer"/>
+            </div>
+        </div>
+    </div>
 
     </body>
 </html>
