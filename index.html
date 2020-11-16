@@ -3,14 +3,34 @@
         <title>SmartWall Android Test</title>
         <script src="https://sdk.staging.smartwall.ai/?v=2"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .outer {
+              display: table;
+              width: 100%;
+              height: 100%;
+            }
+            .inner {
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+            }
+            .mainContainer {
+              position: relative;
+              display: inline-block;
+            }
+        </style>
     </head>
     <body>
-        <div class="mainContainer"/>
-
-
+    <div class="container">
+        <div class="outer">
+            <div class="inner">
+                <div class="mainContainer"/>
+            </div>
+        </div>
+    </div>
         <script>
          (function() { console.info('Init JS SDK'); var sw = new SmartWallSDK({ articleUid:
-         "foo-sw-demo-culture", smartwallUid: "alexii_wall", apiKey: "142e62cabccd4dc57ab61f3ca3844bacf7beed5d1da2564b7dc0903f51cd91e8", selector: ".mainContainer", environment: "staging", mode: 'frontend' }); window.smartWallSdk = sw; })();
+         "foo-sw-demo-culture", smartwallUid: "alexii_wall", apiKey: "142e62cabccd4dc57ab61f3ca3844bacf7beed5d1da2564b7dc0903f51cd91e8", articleSelector: ".mainContainer", environment: "staging", mode: 'frontend' }); window.smartWallSdk = sw; })();
         </script>
 
     </body>
